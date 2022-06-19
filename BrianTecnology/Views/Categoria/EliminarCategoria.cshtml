@@ -1,0 +1,42 @@
+﻿@model BrianTecnology.Models.Categorium
+
+@{
+    ViewData["Title"] = "Eliminar Categoria";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card card-border">
+            <div class="card card-header">
+                <h3><strong>Eliminar Categoria</strong></h3>
+            </div>
+            <div class="card card-body">
+
+               <form asp-action="EliminarCategoria" asp-Controller="Categoria" method="post">
+                   <fieldset disabled>
+                   <div asp-validation-summary="ModelOnly" class=text-danger></div>
+
+                   <input type="hidden" asp-for="IdCategoria" />
+
+                   <div class="form-group mt-3">
+                       <label asp-for="Descripcion" class="control-label">Descripcion: </label>
+                       <input asp-for="Descripcion" class="form-control" type="text"  placeholder="Descripcion..." />
+                       <span asp-validation-for="Descripcion" class="text-danger"></span>
+                   </div>
+
+                  
+
+                   </fieldset>
+                   <div class="mt-3" >
+                       <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i>Eliminar Categoria</button>
+                       <a asp-action="Index" asp-Action="Categoria" class="btn btn-secondary">Volver al Inicio</a>
+                   </div>
+               </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

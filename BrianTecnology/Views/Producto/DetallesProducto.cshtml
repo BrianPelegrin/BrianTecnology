@@ -1,0 +1,24 @@
+﻿@model BrianTecnology.Models.Producto
+
+@{
+    ViewData["Title"] = "Detalles del Producto";
+}
+
+<center>
+    <div class="card" style="width:20rem;margin:20px 0 24px 0">
+  <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWcZm_UyCIbLvU37U_96NWg_bMgUMIxaUscA&usqp=CAU" alt="image" style="width:100%">
+  <hr />
+  <div class="card-body">
+    <h4 class="card-title">@Html.DisplayFor(m=>m.Marca)</h4>
+    <p class="card-text">
+        Descripcion: @Html.DisplayFor(m=>m.Descripcion) <br />
+        Precio: @Html.DisplayFor(m=>m.Precio)  <br />
+        Categoria: @Html.DisplayFor(m=>m.IdCategoriaNavigation.Descripcion)<br />
+        Stock: @Html.DisplayFor(m=>m.Stock)  
+    
+    
+    </p>
+    <a asp-action="Index" asp-controller="Producto" class="btn btn-primary">Volver a la Lista</a>
+  </div>
+</div>
+</center>
